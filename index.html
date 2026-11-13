@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Método Geladinho Lucrativo | Veja quanto sobra em um geladinho</title>
+<meta name="description" content="Veja a conta de um geladinho gourmet: custo, preço e quanto sobra. Guia em PDF com 15 receitas e plano de 7 dias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FBF5E8;--ink:#25201A;--soft:#5E5348;--g:#174C3C;--g2:#26845B;--y:#F4C95D;--red:#B93A26;--line:#E4D8C0}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Figtree',system-ui,sans-serif;background:var(--paper);color:var(--ink);font-size:17px;line-height:1.5}
+img,video{max-width:100%;display:block}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.12;letter-spacing:-.01em}
+h1{font-size:clamp(28px,7vw,44px);color:var(--g)}
+h2{font-size:clamp(27px,5.2vw,40px);color:var(--g);margin-bottom:10px}
+.eyebrow{font-weight:700;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.lead{font-size:18px;color:var(--soft);max-width:34em}
+section{padding:44px 0;border-top:1px solid var(--line)}
+.bar{padding:13px 0;border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'DM Serif Display',serif;font-size:19px;color:var(--g);line-height:1}
+.logo small{display:block;font-family:'Figtree';font-weight:700;font-size:10px;letter-spacing:.14em;color:var(--red);margin-bottom:3px}
+.cta{display:inline-block;text-align:center;background:var(--y);color:var(--g);font-weight:800;font-size:18px;padding:17px 26px;border-radius:8px;text-decoration:none;box-shadow:0 5px 0 #C79A22;transition:transform .08s,box-shadow .08s;cursor:pointer;border:0;font-family:inherit}
+.cta:active{transform:translateY(4px);box-shadow:0 1px 0 #C79A22}
+.cta.block{display:block;width:100%}
+.fine{font-size:13.5px;color:var(--soft);margin-top:11px}
+
+/* ===== vídeo ===== */
+.vsl{padding:22px 0 18px;border-top:0}
+.vsl h1{text-align:center;margin-bottom:16px}
+.player{position:relative;width:100%;max-width:400px;margin:0 auto;aspect-ratio:9/16;background:#102236;border-radius:14px;overflow:hidden;box-shadow:0 14px 40px rgba(20,40,30,.28)}
+.player video{width:100%;height:100%;object-fit:cover;background:#102236}
+.big{position:absolute;inset:0;width:100%;border:0;background:rgba(10,24,20,.38);color:#fff;font-family:inherit;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;transition:opacity .2s}
+.big .ico{width:92px;height:92px;border-radius:50%;background:var(--y);display:grid;place-items:center;box-shadow:0 8px 0 #C79A22}
+.big .ico:after{content:"";margin-left:8px;border-left:30px solid var(--g);border-top:19px solid transparent;border-bottom:19px solid transparent}
+.big b{font-size:22px;font-weight:800;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.big small{font-size:14px;font-weight:600;opacity:.92}
+.big.off{opacity:0;pointer-events:none}
+.pbar{position:absolute;left:0;right:0;bottom:0;height:5px;background:rgba(255,255,255,.25)}
+.pbar i{display:block;height:100%;width:0;background:var(--y)}
+.tap{position:absolute;inset:0;border:0;background:transparent;cursor:pointer}
+.hint{text-align:center;margin-top:16px;font-weight:700;color:var(--g);font-size:15px}
+.hint.ok{color:var(--g2)}
+.hint .arr{display:inline-block;animation:bob 1s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(5px)}}
+
+/* ===== trava ===== */
+#rest{position:relative;transition:filter .6s,opacity .6s}
+#rest.locked{filter:blur(9px);opacity:.5;pointer-events:none;user-select:none;max-height:560px;overflow:hidden}
+.lockmsg{display:none}
+#rest.locked + .lockmsg{display:block}
+
+/* carrossel */
+.car{position:relative;margin-top:20px}
+.track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 14px;margin:0 -20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 74%;max-width:340px;scroll-snap-align:center;cursor:zoom-in}
+.slide .pg{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:0 10px 26px rgba(60,40,10,.14)}
+.slide img{width:100%;height:auto;aspect-ratio:900/1273}
+.slide p{font-size:14px;font-weight:600;color:var(--g);margin-top:10px;text-align:center;line-height:1.3}
+.slide p small{display:block;font-weight:500;color:var(--soft);font-size:12.5px}
+.dots{display:flex;justify-content:center;gap:7px;margin-top:4px}
+.dots i{width:8px;height:8px;border-radius:50%;background:#d6c9ad;transition:.2s}
+.dots i.on{background:var(--g);width:22px;border-radius:5px}
+.arrb{display:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 20px}
+.chips span{background:#fff;border:1px solid var(--line);border-radius:30px;padding:7px 13px;font-weight:700;font-size:14px;color:var(--g)}
+
+/* oferta */
+.offer{background:var(--g);color:#fff;border-top:0}
+.offer h2{color:#fff}
+.offer .box{background:var(--paper);color:var(--ink);border-radius:12px;padding:24px 20px;margin-top:18px}
+.offer .inc{list-style:none;margin:0 0 16px}
+.offer .inc li{padding:8px 0 8px 26px;border-bottom:1px solid var(--line);position:relative;font-weight:500}
+.offer .inc li:before{content:"";position:absolute;left:2px;top:.8em;width:10px;height:6px;border-left:3px solid var(--g2);border-bottom:3px solid var(--g2);transform:rotate(-45deg)}
+.offer .big2{font-family:'DM Serif Display';font-size:60px;color:var(--g);line-height:1}
+.offer .big2 small{font-family:'Figtree';font-size:15px;color:var(--soft);font-weight:500}
+.guar{display:grid;grid-template-columns:60px 1fr;gap:14px;margin-top:18px;align-items:center;font-size:14.5px;color:var(--soft)}
+.guar .seal{width:60px;height:60px;border:2px solid var(--g);border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--g);font-family:'DM Serif Display';font-size:24px;line-height:.9}
+.guar .seal small{font-family:'Figtree';font-size:9px;font-weight:800;letter-spacing:.08em;display:block}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:22px;line-height:1;color:var(--g2)}
+details[open] summary:after{content:"–"}
+details p{margin-top:8px;color:var(--soft);font-size:16px}
+footer{padding:26px 0 90px;font-size:12.5px;color:var(--soft);border-top:1px solid var(--line)}
+footer p{max-width:60em}
+
+.lb{position:fixed;inset:0;background:rgba(15,30,24,.92);z-index:60;display:none;align-items:center;justify-content:center;padding:16px;overflow:auto}
+.lb.on{display:flex}
+.lb img{max-height:94vh;width:auto;max-width:100%;border-radius:4px;background:#fff}
+.lb button{position:fixed;top:12px;right:14px;background:var(--y);color:var(--g);border:0;font-weight:800;font-size:15px;border-radius:30px;padding:9px 16px;font-family:inherit}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(251,245,232,.97);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .25s}
+.sticky.on{transform:none}
+.sticky .in{max-width:520px;margin:0 auto;display:flex;align-items:center;gap:14px}
+.sticky .in div{font-size:13px;line-height:1.2;color:var(--soft)}
+.sticky .in div b{display:block;font-family:'DM Serif Display';font-weight:400;font-size:26px;color:var(--g)}
+.sticky .cta{flex:1;padding:14px 12px;font-size:16px}
+@media(min-width:820px){
+ .slide{flex-basis:300px}
+ .track{padding-left:0;padding-right:0;margin:0}
+ .arrb{display:grid;place-items:center;position:absolute;top:38%;width:44px;height:44px;border-radius:50%;background:var(--g);color:#fff;border:0;font-size:22px;cursor:pointer;z-index:2}
+ .arrb.l{left:-22px}.arrb.r{right:-22px}
+ .offer .box{max-width:560px}
+}
+</style>
+<script>
+var PIXEL_ID='938527535303791';
+var CHECKOUT_URL='https://pay.cakto.com.br/7bmo8a8_1282231';
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init',PIXEL_ID);fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=938527535303791&ev=PageView&noscript=1"></noscript>
+</head>
+<body>
+
+<div class="bar"><div class="wrap"><div class="logo"><small>MÉTODO</small>Geladinho Lucrativo</div></div></div>
+
+<section class="vsl"><div class="wrap">
+  <h1>Veja quanto sobra em UM geladinho, e por que quase todo mundo erra essa conta</h1>
+  <div class="player" id="player">
+    <video id="v" playsinline webkit-playsinline preload="metadata" poster="video/poster.jpg"><source src="video/mini-vsl.mp4" type="video/mp4"></video>
+    <button class="tap" id="tap" aria-label="Pausar ou continuar"></button>
+    <button class="big" id="play"><span class="ico"></span><b>Toque para assistir</b><small>ligue o som · 2 minutos</small></button>
+    <div class="pbar"><i id="pb"></i></div>
+  </div>
+  <p class="hint" id="hint">A página completa abre no final do vídeo <span class="arr">▼</span></p>
+  <p class="fine" style="text-align:center;max-width:420px;margin-left:auto;margin-right:auto">Carla é uma personagem de exemplo. Os valores do vídeo são uma simulação do material, não uma promessa de ganho.</p>
+</div></section>
+
+<div id="rest" class="locked">
+
+<section><div class="wrap">
+  <p class="eyebrow">Veja por dentro</p>
+  <h2>Estas são páginas reais do material</h2>
+  <p class="lead">Deslize para ver o que você recebe. Toque numa página para ampliar.</p>
+  <div class="car">
+    <button class="arrb l" aria-label="Anterior">‹</button>
+    <div class="track" id="track">
+      <div class="slide"><div class="pg"><img src="img/pag01.jpg" alt="Capa do Método Geladinho Lucrativo" loading="lazy"></div><p>Capa<small>guia passo a passo</small></p></div>
+      <div class="slide"><div class="pg"><img src="img/pag04.jpg" alt="Sumário do material" loading="lazy"></div><p>Sumário<small>6 capítulos, 67 páginas</small></p></div>
+      <div class="slide"><div class="pg"><img src="img/pag25.jpg" alt="Receitas de Ninho com morango e chocolate cremoso" loading="lazy"></div><p>Receitas<small>ingredientes, preparo e dicas</small></p></div>
+      <div class="slide"><div class="pg"><img src="img/pag33.jpg" alt="Cálculo do custo por unidade" loading="lazy"></div><p>A conta<small>custo real de cada geladinho</small></p></div>
+      <div class="slide"><div class="pg"><img src="img/pag35.jpg" alt="Margem, markup e preços da concorrência" loading="lazy"></div><p>Preço<small>margem e concorrência</small></p></div>
+      <div class="slide"><div class="pg"><img src="img/pag39.jpg" alt="Mensagens prontas para vender" loading="lazy"></div><p>Vendas<small>mensagens prontas</small></p></div>
+      <div class="slide"><div class="pg"><img src="img/pag61.jpg" alt="Bônus: tabela de precificação" loading="lazy"></div><p>Bônus<small>tabela de precificação</small></p></div>
+      <div class="slide"><div class="pg"><img src="img/pag66.jpg" alt="Plano de ação de 7 dias" loading="lazy"></div><p>Plano de 7 dias<small>da preparação à 1ª venda</small></p></div>
+    </div>
+    <button class="arrb r" aria-label="Próximo">›</button>
+    <div class="dots" id="dots"></div>
+  </div>
+  <div class="chips"><span>67 páginas</span><span>15 receitas</span><span>8 bônus</span><span>Plano de 7 dias</span></div>
+  <a class="cta block" href="#" data-cta="carrossel">Quero o Método por R$ 27</a>
+</div></section>
+
+<section class="offer" id="oferta"><div class="wrap">
+  <p class="eyebrow" style="color:var(--y)">Para começar hoje</p>
+  <h2>Método Geladinho Lucrativo</h2>
+  <div class="box">
+    <ul class="inc">
+      <li>15 receitas completas, com custo e rendimento</li>
+      <li>Como calcular preço e margem de cada sabor</li>
+      <li>Como vender no WhatsApp e no Instagram</li>
+      <li>8 bônus para preencher (caixa, estoque, ficha técnica…)</li>
+      <li>Plano de ação de 7 dias</li>
+    </ul>
+    <div class="big2">R$ 27 <small>pagamento único</small></div>
+    <a class="cta block" href="#" data-cta="oferta" style="margin-top:14px">Quero o Método por R$ 27</a>
+    <p class="fine">Compra segura pela Cakto. O PDF chega no e-mail da compra.</p>
+    <div class="guar">
+      <div class="seal"><div>7<small>DIAS</small></div></div>
+      <p><b>Garantia de 7 dias.</b> Se não for o que você esperava, envie um e-mail em até 7 dias após a confirmação da compra pedindo o reembolso.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Dúvidas rápidas</h2>
+  <details><summary>Nunca vendi nada. Consigo seguir?</summary><p>Sim. O material foi escrito para quem nunca teve um negócio, com exemplos resolvidos e um plano de 7 dias para seguir na ordem.</p></details>
+  <details><summary>O que preciso ter em casa?</summary><p>Para o primeiro teste: freezer ou geladeira, liquidificador, utensílios simples, saquinhos e os ingredientes do primeiro lote. O material estima de R$ 250 a R$ 600, variando conforme a sua região.</p></details>
+  <details><summary>Vou lucrar quanto?</summary><p>Ninguém pode prometer isso com honestidade, e o material também não promete. Ele ensina você a calcular o seu custo, preço e margem com os números da sua região.</p></details>
+  <details><summary>Preciso de autorização para vender?</summary><p>As regras sanitárias mudam por município. O material orienta você a consultar a Vigilância Sanitária local antes de vender.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+  <p>O Método não promete ganhos: os resultados dependem dos preços da sua região, da qualidade, da demanda e da sua gestão. Os valores em reais do vídeo e do material são exemplos de simulação, e a Carla é uma personagem de exemplo, não uma cliente real. Conteúdo educativo. Nomes como Ninho, Oreo e Nutella indicam sabores e pertencem aos seus titulares, sem vínculo com este material.</p>
+</div></footer>
+</div>
+
+<div class="sticky" id="sticky"><div class="in"><div>Método completo<b>R$ 27</b></div><a class="cta" href="#" data-cta="sticky">Quero o Método</a></div></div>
+<div class="lb" id="lb"><button type="button">Fechar</button><img alt=""></div>
+
+<script>
+(function(){
+  var UNLOCK_BEFORE_END=5, EARLY_CTA_AT=85, FALLBACK_NO_PLAY_MS=25000, FALLBACK_PAUSE_MS=20000, DUR_DEFAULT=128.7;
+  function ev(n,p){try{fbq('track',n,p||{})}catch(e){}}
+  function evc(n,p){try{fbq('trackCustom',n,p||{})}catch(e){}}
+  ev('ViewContent',{content_name:'Metodo Geladinho Lucrativo',value:27,currency:'BRL'});
+
+  var v=document.getElementById('v'),play=document.getElementById('play'),tap=document.getElementById('tap'),pb=document.getElementById('pb'),
+      rest=document.getElementById('rest'),hint=document.getElementById('hint'),st=document.getElementById('sticky'),
+      started=false,unlocked=false,early=false,onOffer=false,sent={},pauseT=null;
+
+  function unlock(why){
+    if(unlocked)return;unlocked=true;rest.classList.remove('locked');
+    hint.classList.add('ok');hint.innerHTML='Página liberada, role para baixo <span class="arr">▼</span>';
+    evc('PageUnlocked',{why:why});updSticky();
+  }
+  function updSticky(){st.classList.toggle('on',(unlocked||early)&&!onOffer)}
+  function go(e){e.preventDefault();ev('InitiateCheckout',{value:27,currency:'BRL',content_name:'Metodo Geladinho Lucrativo'});
+    var q=location.search?location.search.slice(1):'';var url=CHECKOUT_URL+(q?(CHECKOUT_URL.indexOf('?')>-1?'&':'?')+q:'');
+    setTimeout(function(){location.href=url},150)}
+  document.querySelectorAll('[data-cta]').forEach(function(a){a.addEventListener('click',go)});
+
+  function start(){
+    if(!started){started=true;evc('VideoPlay')}
+    v.muted=false;v.volume=1;
+    var p=v.play();if(p&&p.catch)p.catch(function(){v.muted=true;v.play().catch(function(){})});
+    play.classList.add('off');
+  }
+  play.addEventListener('click',start);
+  tap.addEventListener('click',function(){if(!started){start();return}if(v.paused)v.play();else v.pause()});
+
+  v.addEventListener('pause',function(){if(started&&!unlocked&&!v.ended){clearTimeout(pauseT);pauseT=setTimeout(function(){unlock('pause')},FALLBACK_PAUSE_MS)}});
+  v.addEventListener('play',function(){clearTimeout(pauseT)});
+  v.addEventListener('timeupdate',function(){
+    var d=v.duration||DUR_DEFAULT,t=v.currentTime;pb.style.width=(t/d*100)+'%';
+    [25,50,75,95].forEach(function(p){if(!sent[p]&&t/d*100>=p){sent[p]=1;evc('VideoProgress',{pct:p})}});
+    if(!early&&t>=EARLY_CTA_AT){early=true;updSticky()}
+    if(t>=d-UNLOCK_BEFORE_END)unlock('video');
+  });
+  v.addEventListener('ended',function(){unlock('ended');play.querySelector('b').textContent='Assistir de novo';play.querySelector('small').textContent='';play.classList.remove('off')});
+  v.addEventListener('error',function(){unlock('error');play.classList.add('off')});
+  setTimeout(function(){if(!started)unlock('no-play')},FALLBACK_NO_PLAY_MS);
+
+  /* carrossel */
+  var track=document.getElementById('track'),slides=[].slice.call(track.children),dots=document.getElementById('dots');
+  slides.forEach(function(){dots.appendChild(document.createElement('i'))});
+  var di=[].slice.call(dots.children);
+  function cur(){var c=track.scrollLeft+track.clientWidth/2,b=0,bd=1e9;slides.forEach(function(s,i){var d=Math.abs(s.offsetLeft+s.offsetWidth/2-track.offsetLeft-c);if(d<bd){bd=d;b=i}});return b}
+  function mark(){var c=cur();di.forEach(function(d,i){d.classList.toggle('on',i===c)})}
+  track.addEventListener('scroll',function(){window.requestAnimationFrame(mark)});mark();
+  function mv(k){var i=Math.max(0,Math.min(slides.length-1,cur()+k));track.scrollTo({left:slides[i].offsetLeft-track.offsetLeft-(track.clientWidth-slides[i].offsetWidth)/2,behavior:'smooth'})}
+  document.querySelector('.arrb.l').addEventListener('click',function(){mv(-1)});
+  document.querySelector('.arrb.r').addEventListener('click',function(){mv(1)});
+  var lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+  slides.forEach(function(s){s.addEventListener('click',function(){lbi.src=s.querySelector('img').src;lb.classList.add('on');evc('PreviewPagina')})});
+  lb.addEventListener('click',function(){lb.classList.remove('on')});
+
+  var of=document.getElementById('oferta');
+  if('IntersectionObserver' in window)new IntersectionObserver(function(en){onOffer=en[0].isIntersecting;updSticky()},{threshold:.15}).observe(of);
+})();
+</script>
+</body>
+</html>
