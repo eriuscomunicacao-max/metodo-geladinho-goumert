@@ -214,7 +214,14 @@ fbq('init',PIXEL_ID);fbq('track','PageView');
   }
   function updSticky(){st.classList.toggle('on',(unlocked||early)&&!onOffer)}
   function go(e){e.preventDefault();ev('InitiateCheckout',{value:27,currency:'BRL',content_name:'Metodo Geladinho Lucrativo'});
-    var q=location.search?location.search.slice(1):'';var url=CHECKOUT_URL+(q?(CHECKOUT_URL.indexOf('?')>-1?'&':'?')+q:'');
+    function ck(n){var m=document.cookie.match('(?:^|; )'+n+'=([^;]*)');return m?decodeURIComponent(m[1]):''}
+    var P=new URLSearchParams(location.search),fbp=ck('_fbp'),fbc=ck('_fbc'),cl=P.get('fbclid');
+    if(!fbc&&cl)fbc='fb.1.'+Date.now()+'.'+cl;
+    if(fbp&&!P.get('fbp'))P.set('fbp',fbp);
+    if(fbc&&!P.get('fbc'))P.set('fbc',fbc);
+    /* a Cakto devolve o "sck" no webhook; levamos fbp, fbc e navegador por ele */
+    if(!P.get('sck'))P.set('sck','fbp:'+fbp+'|fbc:'+fbc+'|ua:'+(navigator.userAgent||'').slice(0,160));
+    var q=P.toString();var url=CHECKOUT_URL+(q?(CHECKOUT_URL.indexOf('?')>-1?'&':'?')+q:'');
     setTimeout(function(){location.href=url},150)}
   document.querySelectorAll('[data-cta]').forEach(function(a){a.addEventListener('click',go)});
 
